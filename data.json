@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Fruits Bowl",
+    "path": "./assets/fruits-svgrepo-com.svg",
+    "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem excepturi ab magni. Ipsa, velit amet quos modi odio maiores, aliquam nulla nisi animi explicabo consectetur ab officiis magni inventore voluptatem. Quam, repellat!"
+  },
+  {
+    "title": "Grapes Bowl",
+    "path": "./assets/grapes-svgrepo-com.svg",
+    "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem excepturi ab magni. Ipsa, velit amet quos modi odio maiores, aliquam nulla nisi animi explicabo consectetur ab officiis magni inventore voluptatem. Quam, repellat!"
+  },
+  {
+    "title": "Pear Bowl",
+    "path": "./assets/pear-svgrepo-com.svg",
+    "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem excepturi ab magni. Ipsa, velit amet quos modi odio maiores, aliquam nulla nisi animi explicabo consectetur ab officiis magni inventore voluptatem. Quam, repellat!"
+  }
+]

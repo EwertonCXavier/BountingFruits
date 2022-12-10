@@ -1,0 +1,240 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  font-family: sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/* First section */
+.presentation {
+  height: 100vh;
+  width: 100%;
+}
+
+body {
+  font-size: 1.4rem;
+}
+
+header {
+  font-size: 1.6rem;
+  height: 4.8rem;
+  width: 100%;
+
+  padding: 1.6rem 3.2rem;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: #007232;
+  opacity: 0.8;
+
+  color: #fff;
+
+  box-shadow: 0 0 0.3rem 0.3rem rgba(0, 0, 0, 0.1);
+}
+
+
+.right-side {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  min-width: 400px;
+}
+
+
+nav a {
+  /* Allows a fixed position for the content*/
+  position: relative;
+  text-decoration: none;
+  color: #d0d0d0;
+  transition: all 0.4s;
+  height: 100%;
+  padding: 0 4px;
+}
+
+nav a:hover {
+  color: #fff;
+}
+
+
+nav a::after {
+  /* Use 'position' attribute to avoid the tag 'a' movement on hover*/
+  position: absolute;
+  content: '';
+  height: 2px;
+  background: #fbe000;
+  width: 0;
+  left: 50%;
+  bottom: -4px;
+  transition: 0.3s ease-out;
+}
+
+
+nav a:hover::after {
+  width: 100%;
+  left: 0%;
+  transition: 0.3s ease-out;
+}
+
+/* Adds the padding before each "a" tag that is not the first */
+nav a:not(:first-child) {
+  margin-left: 1.6rem;
+}
+
+
+.cart {
+  margin-left: 6.4rem;
+}
+
+
+/* First section -- title */
+main {
+  height: calc(100% - 4.8rem);
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  background: #eee;
+
+}
+
+
+.content-aside {
+  /* height: 60%; */
+  flex: 1;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  margin: 0 3.2rem;
+
+}
+
+
+.before-title span {
+  position: relative;
+  font-weight: bold;
+  color: #2e7d32;
+}
+
+.before-title span::after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  height: 2px;
+  width: 100%;
+  background: #007232;
+  top: 50%;
+  /* Sets a space from the right, equivalent to 120% of the element*/
+  right: -120%;
+
+  opacity: 0.6;
+}
+
+
+.title-and-content {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  margin-top: 1.6rem;
+}
+
+
+.title h1 {
+  font-size: 3.6rem;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+}
+
+
+.title-content {
+  margin-top: 0.8rem;
+}
+
+.title-content span {
+  color: #6a6a6a;
+  line-height: 3rem;
+}
+
+b {
+  color: #007232;
+}
+
+
+.order-btn {
+  padding: 16px 32px !important;
+  margin-top: 2.4rem;
+  outline: none;
+  border-radius: 1.6rem;
+  background: transparent;
+  color: #007232;
+  font-weight: bold;
+  border: 1px solid #007232;
+  transition: 0.3s ease-out;
+}
+
+.order-btn:hover {
+  background: #007232;
+  color: #ffffff;
+  border-color: #fff;
+  transition: 0.3s ease-out;
+  cursor: pointer;
+}
+
+
+/* First section - right aside */
+.images-aside {
+  position: relative;
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.main-image {
+  position: relative;
+}
+
+.main-image img {
+  height: 36rem;
+  width: 32rem;
+}
+
+.reduced-image {
+  background: #bdbdbd;
+}
+
+.reduced-image img {
+  height: 12.8rem;
+  width: 9.6rem;
+
+  padding: 16px;
+}
+
+/* Possible update! */
+.reduced-image {
+  margin-top: 16px;
+  border-radius: 1rem;
+  transition: 0.3s ease-out;
+}
+
+.reduced-image:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+  transition: 0.3s ease-out;
+}
