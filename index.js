@@ -22,10 +22,11 @@
 
     node.addEventListener('click', (info) => {
       const clickId = info.path[0].id;
-      const filteredId = clickId.match(/\-(.*)$/gm)[0].replace('-', '');
+      const filteredId = clickId.match(/(?<=\-)\d+$/gm)[0];
       console.log({ filteredId });
       console.log('HERE IS THE INFO OF THIS GUY: ', filteredId);
 
+      // Sets the new main image after the click
       const mainImage = document.getElementById("main-image");
       mainImage.innerHTML = "";
 
@@ -36,6 +37,25 @@
       newImageContainer.appendChild(newImageElement);
 
       mainImage.appendChild(newImageContainer);
+
+      // Updates the title and its description
+      const title = document.getElementById("title");
+      const titleString = data[filteredId].title;
+
+      const firstPartOfTheTitle = titleString.match(/\w+(?=\s)/gm)[0];
+      console.log({ firstPartOfTheTitle });
+      const boldStyledTitle = document.createElement("b");
+      boldStyledTitle.innerHTML = firstPartOfTheTitle;
+
+      title.innerHTML = '';
+      title.appendChild(boldStyledTitle);
+
+      title.innerHTML += ' ' + titleString.match(/(?<=\s).*$/gm)[0];
+
+
+      const description = document.getElementById("description");
+      description.innerHTML = data[filteredId].description;
+
     })
   }
 
