@@ -40,6 +40,7 @@ header {
   color: #fff;
 
   box-shadow: 0 0 0.3rem 0.3rem rgba(0, 0, 0, 0.1);
+  z-index: 999;
 }
 
 
@@ -194,6 +195,7 @@ b {
   color: #ffffff;
   border-color: #fff;
   cursor: pointer;
+  transform: scale(1.1);
 }
 
 
@@ -203,7 +205,7 @@ b {
   flex: 2;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
   /* padding: 0 6.4rem; */
 }
 
@@ -237,4 +239,321 @@ b {
 .reduced-image:hover {
   transform: scale(1.1);
   cursor: pointer;
+}
+
+
+/* Section 2 */
+#company-info {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+
+}
+
+#company-info main {
+  background: #fff;
+  height: 95vh;
+}
+
+
+/* Location */
+
+
+
+.location,
+.weather {
+  flex: 1;
+  height: 100%;
+  padding: 3.2rem;
+}
+
+.location {
+  color: #333;
+  border-right: 1px dashed #bdbdbd;
+
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+}
+
+.company-name {
+  font-size: 2.4rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.company-description {
+  margin: 1.6rem 0;
+}
+
+.company-description p {
+  font-size: 1.4rem;
+  line-height: 3rem;
+}
+
+.our-stores span {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.our-stores ul li {
+  list-style: none;
+  font-size: 1.4rem;
+  margin-top: 1.6rem;
+  cursor: pointer;
+}
+
+.our-stores ul li:hover {
+  color: #000;
+}
+
+.our-stores .find-us {
+  width: 100%;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.contacts {
+  margin-top: 2.4rem;
+}
+
+/* Contacts section */
+/* .contacts {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+} */
+
+.contacts-explanation span {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.contacts-options {
+  display: flex;
+  flex-direction: column;
+}
+
+.contacts-options span {
+  margin-top: 0.8rem;
+}
+
+
+#company-info main .call-to-action {
+  flex: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+
+#company-info main .call-to-action .cta-content {
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 16px;
+}
+
+
+.cta-row {
+  height: 40%;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.first-message {
+  font-size: 2.4rem;
+  font-weight: bold;
+  line-height: 3.6rem;
+  text-align: center;
+  color: #333;
+  width: 50%;
+}
+
+.second-message {
+  width: 75%;
+  font-size: 1.6rem;
+  font-weight: bold;
+  line-height: 3.2rem;
+  text-align: center;
+  color: #333;
+}
+
+.btn-container {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.no-margin {
+  margin: 0 !important;
+}
+
+#company-info main .call-to-action .social-networks {
+  flex: 1;
+  /* padding: 16px; */
+}
+
+.social-networks .social-network-message span {
+  font-size: 2rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* margin-bottom: 1.6rem; */
+}
+
+
+.social-networks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.6rem;
+}
+
+
+.social-networks i {
+  font-size: 3.6rem;
+  margin-left: 3rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.social-networks i:hover {
+  transform: scale(1.1);
+
+}
+
+.social-networks .icons-social-network:not(:first-child) {
+  margin: 0;
+}
+
+
+.weather {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px dashed #bdbdbd;
+
+}
+
+
+.weather .city-weather {
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 3.2rem;
+  color: #333;
+  text-align: center;
+}
+
+
+.weather-card {
+  height: 24rem;
+  width: 24rem;
+  padding: 16px;
+  border-radius: 1rem;
+  background: #2e7d32;
+  /* opacity: 0.6; */
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.6rem;
+
+}
+
+.today-date {
+  /* height: 25%; */
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #f3f3f3;
+  text-align: center;
+}
+
+
+.city-card {
+  /* height: 50%; */
+  display: flex;
+  flex-direction: column;
+  /* align-items: left; */
+  justify-content: flex-start;
+}
+
+
+.temperature-humidity-row {
+  display: flex;
+  width: 100%;
+  /* height: 100%; */
+  justify-content: space-between;
+  /* align-items: center; */
+}
+
+
+.city-container,
+.humidity {
+  padding: 16px;
+  height: 50%;
+}
+
+.temperature,
+.percentual {
+  font-size: 3.6rem;
+  font-weight: 500;
+  color: #f3f3f3;
+}
+
+.city-name,
+.humidity-name {
+  font-size: 2rem;
+  color: #f3f3f3;
+}
+
+.another-cta {
+  font-size: 1.4rem;
+  font-weight: bold;
+  line-height: 2.4rem;
+  text-align: center;
+
+  margin-top: 1.6rem;
+}
+
+.forecast-container {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  color: #f3f3f3;
+}
+
+
+footer {
+  height: 20%;
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(269.22deg, #007232 0%, rgba(0, 114, 50, 0.51) 100%);
+}
+
+footer span {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #f2f2f2;
 }
