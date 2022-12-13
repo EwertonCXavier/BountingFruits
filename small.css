@@ -1,6 +1,50 @@
 /* For medias with width below 576px */
 
-@media(max-width: 576px) {
+@media (max-width: 768px) {
+  /* Disables navbar and switches to hamburger menu*/
+  .cart {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav-items {
+    width: fit-content;
+    min-width: fit-content;
+    position: fixed;
+    right: -100%;
+    top: 48px;
+    flex-direction: column;
+    text-align: center;
+    background: #007232;
+    transition: 0.3s;
+  }
+
+  .nav-items.active {
+    right: 0;
+  }
+
+  .nav-items a {
+    color: #fff;
+    width: 160px;
+    height: 32px;
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-items a {
+    margin: 0.8rem 0 !important;
+  }
+
+  .nav-items a::after {
+    display: none;
+    height: 0px;
+  }
 
   .presentation main {
     flex-direction: column;
@@ -17,7 +61,7 @@
 
   .images-aside {
     width: 100%;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     padding-bottom: 1.6rem;
   }
 
@@ -36,12 +80,10 @@
     display: none;
   } */
 
-
-
   /* Second section */
 
   #company-info main {
-    height: 150vh;
+    height: 200vh;
   }
 
   #company-info main {
@@ -49,7 +91,7 @@
   }
 
   .location {
-    padding: 3.2rem 1.6rem;
+    padding: 3.2rem;
   }
 
   .company-name span {
@@ -64,10 +106,10 @@
     font-size: 1.2rem;
   }
 
-
   .first-message {
     font-size: 1.4rem;
     line-height: 2rem;
+    text-align: left;
   }
 
   .second-message {
@@ -77,14 +119,15 @@
   }
 
   #company-info main .call-to-action .cta-content {
-    padding-top: 3.2rem;
+    padding: 3.2rem;
     border-top: 1px dashed #bdbdbd;
   }
 
   .weather {
-    padding: 0.8rem 1.6rem;
+    padding: 0.8rem 3.2rem;
     border: none;
     border-top: 1px dashed #bdbdbd;
+    width: 100%;
   }
 
   .weather-card {
@@ -103,7 +146,6 @@
     padding: 0;
   }
 
-
   .temperature,
   .percentual {
     font-size: 2.4rem;
@@ -113,10 +155,10 @@
     height: fit-content;
   }
 
-
   .forecast-container {
     flex-direction: row;
     align-items: center;
+    justify-content: space-evenly;
   }
 
   /* 

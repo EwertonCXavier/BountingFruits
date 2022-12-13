@@ -34,7 +34,11 @@ header {
   justify-content: space-between;
 
   /* background-color: #007232; */
-  background: linear-gradient(269.22deg, #007232 0%, rgba(0, 114, 50, 0.51) 100%);
+  background: linear-gradient(
+    269.22deg,
+    #007232 0%,
+    rgba(0, 114, 50, 0.51) 100%
+  );
   opacity: 0.8;
 
   color: #fff;
@@ -43,6 +47,15 @@ header {
   z-index: 999;
 }
 
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.hamburger img {
+  height: 3.6rem;
+  width: 3.6rem;
+}
 
 .right-side {
   height: 100%;
@@ -50,13 +63,12 @@ header {
   align-items: center;
 }
 
-nav {
+.nav-items {
   display: flex;
   min-width: 400px;
 }
 
-
-nav a {
+.nav-items a {
   /* Allows a fixed position for the content*/
   position: relative;
   text-decoration: none;
@@ -66,15 +78,14 @@ nav a {
   padding: 0 4px;
 }
 
-nav a:hover {
+.nav-items a:hover {
   color: #fff;
 }
 
-
-nav a::after {
+.nav-items a::after {
   /* Use 'position' attribute to avoid the tag 'a' movement on hover*/
   position: absolute;
-  content: '';
+  content: "";
   height: 2px;
   background: #fbe000;
   width: 0;
@@ -83,22 +94,19 @@ nav a::after {
   transition: all 0.3s ease-out;
 }
 
-
-nav a:hover::after {
+.nav-items a:hover::after {
   width: 100%;
   left: 0%;
 }
 
 /* Adds the padding before each "a" tag that is not the first */
-nav a:not(:first-child) {
+.nav-items a:not(:first-child) {
   margin-left: 1.6rem;
 }
-
 
 .cart {
   margin-left: 6.4rem;
 }
-
 
 /* First section -- title */
 main {
@@ -109,9 +117,7 @@ main {
   align-items: center;
 
   background: #eee;
-
 }
-
 
 .content-aside {
   /* height: 60%; */
@@ -122,9 +128,7 @@ main {
   justify-content: space-between;
 
   margin: 0 3.2rem;
-
 }
-
 
 .before-title span {
   position: relative;
@@ -135,7 +139,7 @@ main {
 .before-title span::after {
   position: absolute;
   display: inline-block;
-  content: '';
+  content: "";
   height: 2px;
   width: 100%;
   background: #007232;
@@ -146,7 +150,6 @@ main {
   opacity: 0.6;
 }
 
-
 .title-and-content {
   display: flex;
   flex-direction: column;
@@ -156,13 +159,11 @@ main {
   margin-top: 1.6rem;
 }
 
-
 .title h1 {
   font-size: 3.6rem;
   font-weight: 900;
   letter-spacing: 0.5px;
 }
-
 
 .title-content {
   margin-top: 0.8rem;
@@ -176,7 +177,6 @@ main {
 b {
   color: #007232;
 }
-
 
 .order-btn {
   padding: 16px 32px !important;
@@ -198,7 +198,6 @@ b {
   transform: scale(1.1);
 }
 
-
 /* First section - right aside */
 .images-aside {
   position: relative;
@@ -218,10 +217,6 @@ b {
   width: 32rem;
 }
 
-.reduced-image {
-  background: #bdbdbd;
-}
-
 .reduced-image img {
   height: 12.8rem;
   width: 9.6rem;
@@ -231,9 +226,10 @@ b {
 
 /* Possible update! */
 .reduced-image {
-  margin-top: 16px;
+  background: #bdbdbd;
   border-radius: 1rem;
   transition: all 0.3s ease-out;
+  /* margin-top: 16px; */
 }
 
 .reduced-image:hover {
@@ -241,6 +237,10 @@ b {
   cursor: pointer;
 }
 
+/*  */
+.reduced-image + .reduced-image {
+  margin-top: 16px;
+}
 
 /* Section 2 */
 #company-info {
@@ -248,7 +248,6 @@ b {
   flex-direction: column;
   height: 100vh;
   width: 100%;
-
 }
 
 #company-info main {
@@ -256,10 +255,7 @@ b {
   height: 95vh;
 }
 
-
 /* Location */
-
-
 
 .location,
 .weather {
@@ -343,7 +339,6 @@ b {
   margin-top: 0.8rem;
 }
 
-
 #company-info main .call-to-action {
   flex: 2;
   height: 100%;
@@ -352,7 +347,6 @@ b {
   align-items: center;
   justify-content: space-around;
 }
-
 
 #company-info main .call-to-action .cta-content {
   height: 80%;
@@ -363,7 +357,6 @@ b {
   padding: 16px;
 }
 
-
 .cta-row {
   height: 40%;
   width: 100%;
@@ -372,7 +365,6 @@ b {
   justify-content: space-between;
   align-items: center;
 }
-
 
 .first-message {
   font-size: 2.4rem;
@@ -418,14 +410,12 @@ b {
   /* margin-bottom: 1.6rem; */
 }
 
-
 .social-networks {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 1.6rem;
 }
-
 
 .social-networks i {
   font-size: 3.6rem;
@@ -436,13 +426,11 @@ b {
 
 .social-networks i:hover {
   transform: scale(1.1);
-
 }
 
 .social-networks .icons-social-network:not(:first-child) {
   margin: 0;
 }
-
 
 .weather {
   display: flex;
@@ -450,9 +438,7 @@ b {
   align-items: center;
   justify-content: center;
   border-left: 1px dashed #bdbdbd;
-
 }
-
 
 .weather .city-weather {
   font-size: 2rem;
@@ -461,7 +447,6 @@ b {
   color: #333;
   text-align: center;
 }
-
 
 .weather-card {
   height: 24rem;
@@ -473,7 +458,6 @@ b {
   display: flex;
   flex-direction: column;
   margin-top: 1.6rem;
-
 }
 
 .today-date {
@@ -484,7 +468,6 @@ b {
   text-align: center;
 }
 
-
 .city-card {
   /* height: 50%; */
   display: flex;
@@ -493,7 +476,6 @@ b {
   justify-content: flex-start;
 }
 
-
 .temperature-humidity-row {
   display: flex;
   width: 100%;
@@ -501,7 +483,6 @@ b {
   justify-content: space-between;
   /* align-items: center; */
 }
-
 
 .city-container,
 .humidity {
@@ -541,7 +522,6 @@ b {
   color: #f3f3f3;
 }
 
-
 footer {
   height: 20%;
   flex: 1;
@@ -549,7 +529,11 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(269.22deg, #007232 0%, rgba(0, 114, 50, 0.51) 100%);
+  background: linear-gradient(
+    269.22deg,
+    #007232 0%,
+    rgba(0, 114, 50, 0.51) 100%
+  );
 }
 
 footer span {
