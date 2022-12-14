@@ -52,11 +52,19 @@
 
       title.innerHTML += ' ' + titleString.match(/(?<=\s).*$/gm)[0];
 
-
       const description = document.getElementById("description");
       description.innerHTML = data[filteredId].description;
 
-    })
+    });
+
+    const currentNumberOfDrinks = JSON.parse(localStorage.getItem("drinks"));
+
+    const numberOfDrinks = document.getElementById("number-of-drinks");
+    numberOfDrinks.innerHTML = currentNumberOfDrinks.length;
+
+    const drinksToCourtesy = document.getElementById("number-of-drinks-to-courtesy");
+    drinksToCourtesy.innerHTML = 10 - currentNumberOfDrinks.length;
+
   }
 
 })();
