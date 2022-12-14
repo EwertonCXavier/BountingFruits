@@ -486,13 +486,13 @@ b {
 
 .city-container,
 .humidity {
-  padding: 16px;
+  padding-top: 16px;
   height: 50%;
 }
 
 .temperature,
 .percentual {
-  font-size: 3.6rem;
+  font-size: 2.4rem;
   font-weight: 500;
   color: #f3f3f3;
 }
