@@ -7,6 +7,7 @@
 
   const freshPageButton = document.getElementById("fresh-page-submit-button");
 
+
   freshPageButton.addEventListener("click", (event) => {
     event.preventDefault();
     // console.log({ first: firstName.value });
@@ -23,65 +24,71 @@
     if (firstName === "" || email === "" || phone === "" || firstDrink === "empty") {
       alert("Form has invalid data! Please, fill it again!");
     }
+    else {
+      console.log({
+        firstName,
+        email,
+        phone,
+        firstDrink,
+        secondDrink,
+        thirdDrink,
+      });
 
-    console.log({
-      firstName,
-      email,
-      phone,
-      firstDrink,
-      secondDrink,
-      thirdDrink,
-    });
 
 
+      let nutritionTable = {
+        carbohydrates: 0,
+        protein: 0,
+        fat: 0,
+        sugar: 0,
+        calories: 0
+      };
 
-    let nutritionTable = {
-      carbohydrates: 0,
-      protein: 0,
-      fat: 0,
-      sugar: 0,
-      calories: 0
-    };
+      const drinks = [firstDrink, secondDrink, thirdDrink];
 
-    const drinks = [firstDrink, secondDrink, thirdDrink];
+      drinks.forEach(drink => {
+        if (drink !== "empty") {
+          const filteredFruit = fruitsResponse.filter(fruit => fruit.name === drink);
 
-    drinks.forEach(drink => {
-      if(drink !== "empty") {
-        const filteredFruit = fruitsResponse.filter(fruit => fruit.name === drink);
+          console.log({ filteredFruit });
+          nutritionTable["carbohydrates"] += filteredFruit[0]["nutritions"]["carbohydrates"];
+          nutritionTable["protein"] += filteredFruit[0]["nutritions"]["protein"];
+          nutritionTable["fat"] += filteredFruit[0]["nutritions"]["fat"];
+          nutritionTable["sugar"] += filteredFruit[0]["nutritions"]["sugar"];
+          nutritionTable["calories"] += filteredFruit[0]["nutritions"]["calories"];
+        }
+      });
 
-        console.log({filteredFruit});
-        nutritionTable["carbohydrates"] += filteredFruit[0]["nutritions"]["carbohydrates"];
-        nutritionTable["protein"] += filteredFruit[0]["nutritions"]["protein"];
-        nutritionTable["fat"] += filteredFruit[0]["nutritions"]["fat"];
-        nutritionTable["sugar"] += filteredFruit[0]["nutritions"]["sugar"];
-        nutritionTable["calories"] += filteredFruit[0]["nutritions"]["calories"];
+      console.log({ nutritionTable });
+
+
+      // Local Storage data
+
+      const dataToSubmit = {
+        firstName,
+        email,
+        phone,
+        firstDrink,
+        secondDrink,
+        thirdDrink,
+        additionalInfo
+      };
+
+      if (localStorage.getItem('drinks')) {
+        console.log('ALREADY EXISTS');
       }
-    });
+      localStorage.setItem('drinks', localStorage.getItem('drinks') ?
+        JSON.stringify([...JSON.parse(localStorage.getItem('drinks')), dataToSubmit]) :
+        JSON.stringify([dataToSubmit]));
 
-    console.log({nutritionTable});
 
+      alert("Drink request submitted successfully!");
 
-    // Local Storage data
-
-    const dataToSubmit = {
-      firstName,
-      email,
-      phone,
-      firstDrink,
-      secondDrink,
-      thirdDrink,
-      additionalInfo
-    };
-
-    if(localStorage.getItem('drinks')) {
-      console.log('ALREADY EXISTS');
+      // Redirects to the home page!!!
+      window.location.replace("index.html")
     }
-    localStorage.setItem('drinks', localStorage.getItem('drinks') ?
-    JSON.stringify([...JSON.parse(localStorage.getItem('drinks')), dataToSubmit]) : 
-    JSON.stringify([dataToSubmit]));
-    
   });
-  
+
   console.log({ fruitsResponse });
 
   const drinksOptions = document.querySelectorAll(".drinks-select");
@@ -100,5 +107,5 @@
   });
 
 
-  
+
 })();
